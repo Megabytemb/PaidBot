@@ -16,8 +16,6 @@ checked = set()
 
 error = re.compile(r'\bpayed\b', re.IGNORECASE)
 
-print error.match("i payed my bills")
-
 correction = "~~payed~~ paid"
 
 def Loop(reddit):
