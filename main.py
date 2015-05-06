@@ -43,7 +43,7 @@ def Loop(reddit):
         print str(e)
 
 def main():
-    reddit = praw.Reddit("Python:PaidB0t:1.0 (by /u/megabytemb)")
+    reddit = praw.Reddit(user_agent="Python:PaidB0t:1.0 (by /u/megabytemb)", cache_timeout=4)
     reddit.login(username=results.username, password=results.password)
     
     while True:
