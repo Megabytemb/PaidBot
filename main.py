@@ -2,6 +2,7 @@ import praw
 import argparse
 import time
 import re
+import logging
 
 parser = argparse.ArgumentParser()
 
@@ -38,12 +39,11 @@ def Loop(reddit):
         timeset = time.strftime("%m-%d %H:%M:%S") # current date and time
         print timeset
         print "Just scanned " + str(count) + " comments.\n"
-        time.sleep(5)
     except Exception as e:
         print str(e)
 
 def main():
-    reddit = praw.Reddit(user_agent="Python:PaidB0t:1.0 (by /u/megabytemb)", cache_timeout=4)
+    reddit = praw.Reddit(user_agent="Python:PaidB0t:1.0 (by /u/megabytemb)", cache_timeout=0, api_request_delay=1.0)
     reddit.login(username=results.username, password=results.password)
     
     while True:
